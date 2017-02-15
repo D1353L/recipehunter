@@ -6,6 +6,6 @@ class Recipe < ActiveRecord::Base
   format :json
 
   def self.for(keyword)
-    get('/search', query: { q: keyword })
+    get('/search', query: { q: keyword })['recipes']
   end
 end
